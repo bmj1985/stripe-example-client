@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>galvanize investigators: drill 2</h1>
+    </header>
+    <main>
+      <section>
+        <h2>Pay Your Bill</h2>
+      </section>
+      <div class="stripe">
+        <form action="http://localhost:5000/charge" method="post" id="payment-form">
+          <div class="form-row">
+            <label for="amount">Your balance is $387. How much would you like to charge to this card?</label>
+            <input type="number" name="amount" id="amount">
+            <p id="amountError"></p>
+            <input type="number" name="maxPayment" value="387" hidden>
+            <label for="card-element">Card</label>
+            <!-- Credit card input will be put here by Stripe -->
+            <div id="card-element"></div>
+            <div id="card-errors" role="alert"></div>
+          </div>
+          <button>Submit Payment</button>
+        </form>
+    </div>
+    </main>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
